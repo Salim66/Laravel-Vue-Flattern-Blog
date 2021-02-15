@@ -42,7 +42,7 @@
               <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <!-- Add icons to the links using the .nav-icon class
                      with font-awesome or any other icon font library -->
-                <li class="nav-item">
+                <li class="nav-item  ">
                   <router-link to="/home" class="nav-link">
                     <i class="nav-icon fas fa-tachometer-alt"></i>
                     <p>
@@ -52,21 +52,21 @@
                   </router-link>
                 </li>
                 <li class="nav-item">
-                  <a href="../widgets.html" class="nav-link">
+                  <router-link to="/category-list" class="nav-link">
                     <i class="nav-icon fas fa-th"></i>
                     <p>
                       Category
                     </p>
-                  </a>
+                  </router-link>
                 </li>
                 <li class="nav-item">
-                  <a href="../widgets.html" class="nav-link">
+                  <router-link to="/post-list" class="nav-link">
                     <i class="nav-icon fas fa-th"></i>
                     <p>
                       Post
                       <span class="right badge badge-danger">New</span>
                     </p>
-                  </a>
+                  </router-link>
                 </li>
 
               </ul>
