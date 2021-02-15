@@ -24,6 +24,12 @@ const store = new Vuex.Store(
     stores
 )
 
+//Support Editor
+import 'v-markdown-editor/dist/v-markdown-editor.css';
+import Editor from 'v-markdown-editor'
+// global register
+Vue.use(Editor);
+
 //Sweet Alert 2 Support
 import Swal from 'sweetalert2'
 window.Swal = Swal

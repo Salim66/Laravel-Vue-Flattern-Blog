@@ -12,6 +12,15 @@
                 <table id="example2" class="table table-bordered table-hover">
                   <thead>
                   <tr>
+                    <th>
+                        <select @change="selectedDeleted" v-model="select">
+                          <option value="">Select</option>
+                          <option value="">Delete All</option>
+                        </select><br>
+                        <input type="checkbox" @click.prevent="allCategorySelect" v-model="select_all">
+                        <span v-if="this.select_all == false">Check All</span>
+                        <span v-else>Uncheck All</span>
+                    </th>
                     <th>SL</th>
                     <th>Category Name</th>
                     <th>Status</th>
@@ -22,6 +31,9 @@
                   <tbody>
 
                   <tr v-for="(category,index) in allCategory" :key="category.id">
+                    <td>
+                        <input type="checkbox" :value="category.id" v-model="selectCategoryItem">
+                    </td>
                     <td>{{ index+1 }}</td>
                     <td>{{ category.cat_name }}</td>
                     <td>{{ category.status }}</td>
@@ -45,6 +57,13 @@
 <script>
 export default {
     name: 'List',
+    data(){
+        return {
+            selectCategoryItem: [],
+            select: '',
+            select_all: false
+        }
+    },
     mounted() {
         this.$store.dispatch('allCategory')
     },
@@ -63,6 +82,28 @@ export default {
                         title: 'Category deleted successfully ):'
                     })
                 })
+        },
+        selectedDeleted(){
+            axios.get(`/selected-category-delete/${this.selectCategoryItem}`)
+                .then((response) => {
+                    this.selectCategoryItem = []
+                    this.$store.dispatch('allCategory')
+                    Toast.fire({
+                        icon: 'success',
+                        title: 'Category deleted successfully ):'
+                    })
+                })
+        },
+        allCategorySelect(){
+            if(this.select_all == false){
+                this.select_all = true
+                for(var category in this.allCategory){
+                    this.selectCategoryItem.push(this.allCategory[category].id)
+                }
+            }else{
+                this.select_all = false
+                this.selectCategoryItem = []
+            }
         }
     },
 }

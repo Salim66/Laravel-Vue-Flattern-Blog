@@ -29,3 +29,12 @@ Route::post('/add-category', 'App\Http\Controllers\CategoryController@addCategor
 Route::get('/category-delete/{id}', 'App\Http\Controllers\CategoryController@deleteCategory');
 Route::get('/edit-category/{id}', 'App\Http\Controllers\CategoryController@editCategory');
 Route::post('/update-category/{id}', 'App\Http\Controllers\CategoryController@updateCategory');
+Route::get('/selected-category-delete/{ids}', 'App\Http\Controllers\CategoryController@selectedCategoryDelete');
+
+//Post
+Route::get('/all-post', 'App\Http\Controllers\PostController@allPost');
+Route::post('/add-post', 'App\Http\Controllers\PostController@addPost');
+Route::get('/delete-post/{id}', 'App\Http\Controllers\PostController@deletePost');
+Route::get('/edit-post/{id}', 'App\Http\Controllers\PostController@editPost');
+Route::post('/update-post/{id}', 'App\Http\Controllers\PostController@updatePost');
+Route::get('/selected-post-deleted/{ids}', 'App\Http\Controllers\PostController@selectedPostDeleted');

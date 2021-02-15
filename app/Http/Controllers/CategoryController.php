@@ -45,4 +45,12 @@ class CategoryController extends Controller
         $update_id -> cat_name = $request -> cat_name;
         $update_id -> update();
     }
+
+    public function selectedCategoryDelete($ids){
+        $values = explode(',', $ids);
+        foreach($values as $category){
+            $category_info = Category::find($category);
+            $category_info -> delete();
+        }
+    }
 }
