@@ -21,14 +21,14 @@
         "sass": "^1.20.1",
         "sass-loader": "^8.0.0",
         "vue": "^2.5.17",
-        "vue-loader": "^15.9.5",
+        "vue-loader": "^15.9.6",
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
         "@fortawesome/fontawesome-free": "^5.15.2",
         "admin-lte": "^3.1.0-rc",
         "moment": "^2.29.1",
-        "sweetalert2": "^10.14.1",
+        "sweetalert2": "^10.15.0",
         "v-markdown-editor": "^1.2.6",
         "vform": "^1.0.1",
         "vue-router": "^3.5.1",

@@ -49,6 +49,7 @@ window.Toast = Toast
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('admin-home', require('./components/admin/AdminMaster.vue').default);
+Vue.component('public-master', require('./components/public/PublicMaster.vue').default);
 
 //Vue Router Instance
 import {routes} from './routes'
