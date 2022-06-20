@@ -30,7 +30,7 @@
                     <div class="post-heading">
                       <h3><a href="#">{{ post.title }}</a></h3>
                     </div>
-                    <img :src="`/uploadimage/${post.photo}`" alt="" />
+                    <img :src="`uploadimage/${post.photo}`" alt="" />
                   </div>
                   <p>
                     {{ post.description | shortTextFormatter(300, '....') }}
